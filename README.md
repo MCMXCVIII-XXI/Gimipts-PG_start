@@ -9,18 +9,23 @@
 
 ## Быстрый старт
 
-### 1. Клонирование репозитория
+### 1. Клонирование репозитория:
 ```bash
-git clone 
+git clone https://github.com/MCMXCVIII-XXI/Gimipts-PG_start.git
+```
+переходим в директорию:
+```
+cd Gimipts-PG_start/
 ```
 
-### 1. Создание и активация виртуального окружения
+### 2. Создание и активация виртуального окружения:
 ```bash
-python -m venv venv  # в директории Gimipts-PG_start
+python -m venv venv 
 source venv/bin/activate
 ```
 
-### 2. Установка зависимостей
+### 3. Установка зависимостей
+
 Перейдите в директорию `Gimipts-PG_start` и выполните:
 ```bash
 pip install .
@@ -32,15 +37,15 @@ pip install /путь/к/Gimipts-PG_start/.
 pip install -r /путь/к/Gimipts-PG_start/requirements.txt
 ```
 
-### 3. Запуск программы
+### 4. Запуск программы:
 
-#### 3.1 Запуск с добавлением SSH-ключа в ssh-agent
+Запуск с добавлением SSH-ключа в ssh-agent
 Позволяет вводить пароль от приватного ключа один раз за сессию:
 ```bash
 gimipts -H "IP_адрес1 IP_адрес2"
 ```
 
-#### 3.2 Запуск без добавления ключа в ssh-agent
+Запуск без добавления ключа в ssh-agent
 Требует ввод пароля от приватного ключа при каждом подключении:
 ```bash
 gimipts-pass -H "IP_адрес1 IP_адрес2"
