@@ -5,26 +5,26 @@
 
 Основные компоненты:
 - `data.py` — обрабатывает введённые IP-адреса серверов и обновляет файл `inventory.ini`.
-- `run_pass.py` — основной скрипт, который запускает `data.py`, выполняет Ansible playbook `playbook.yml` с помощью команды `ansible-playbook pg_install/ansible_run/playbook.yml -i pg_install/ansible_run/inventory.ini --ask-become-pass`, и после завершения очищает файл `inventory.ini`.
+- `run_pass.py` — основной скрипт, который запускает `data.py`, выполняет Ansible playbook `playbook.yml` с помощью команды `ansible-playbook Gimipts-PG_start/ansible_run/playbook.yml -i Gimipts-PG_start/ansible_run/inventory.ini --ask-become-pass`, и после завершения очищает файл `inventory.ini`.
 
 ## Быстрый старт
 
 ### 1. Создание и активация виртуального окружения
 ```bash
-python -m venv venv  # в директории pg_install
+python -m venv venv  # в директории Gimipts-PG_start
 source venv/bin/activate
 ```
 
 ### 2. Установка зависимостей
-Перейдите в директорию `pg_install` и выполните:
+Перейдите в директорию `Gimipts-PG_start` и выполните:
 ```bash
 pip install .
 pip install -r requirements.txt
 ```
 Если вы находитесь вне директории, укажите полный путь:
 ```bash
-pip install /путь/к/pg_install/.
-pip install -r /путь/к/pg_install/requirements.txt
+pip install /путь/к/Gimipts-PG_start/.
+pip install -r /путь/к/Gimipts-PG_start/requirements.txt
 ```
 
 ### 3. Запуск программы
@@ -53,8 +53,8 @@ gimipts-pass -H "IP_адрес1 IP_адрес2"
 
 ## Настройка
 
-- В файле `pg_install/ansible_run/playbook.yml` можно изменить версию PostgreSQL, пароли и другие параметры установки.
-- В `pg_install/gimipts_project/data.py` настраивается добавление серверов в инвентарь.
+- В файле `Gimipts-PG_start/ansible_run/playbook.yml` можно изменить версию PostgreSQL, пароли и другие параметры установки.
+- В `Gimipts-PG_start/gimipts_project/data.py` настраивается добавление серверов в инвентарь.
 
 ## Проблемы и решения
 
