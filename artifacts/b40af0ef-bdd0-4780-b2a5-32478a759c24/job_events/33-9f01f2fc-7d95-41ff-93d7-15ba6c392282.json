@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "9f01f2fc-7d95-41ff-93d7-15ba6c392282", "counter": 33, "stdout": "Runs Ansible playbooks, executing the defined tasks on the targeted hosts.", "start_line": 32, "end_line": 33, "runner_ident": "b40af0ef-bdd0-4780-b2a5-32478a759c24", "created": "2025-04-12T20:17:31.583988+00:00"}

@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "94e5f76c-04ee-4e2a-8593-cec243fb722e", "counter": 90, "stdout": "  -t, --tags TAGS       only run plays and tasks tagged with these values.", "start_line": 89, "end_line": 90, "runner_ident": "ce275835-ea8a-471e-8934-5b7dd6c76a36", "created": "2025-04-12T20:03:33.924945+00:00"}

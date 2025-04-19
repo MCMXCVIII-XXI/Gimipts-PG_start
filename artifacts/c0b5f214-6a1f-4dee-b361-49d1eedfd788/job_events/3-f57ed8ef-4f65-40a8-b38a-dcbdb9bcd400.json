@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "f57ed8ef-4f65-40a8-b38a-dcbdb9bcd400", "counter": 3, "stdout": "\u001b[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\u001b[0m", "start_line": 2, "end_line": 3, "runner_ident": "c0b5f214-6a1f-4dee-b361-49d1eedfd788", "created": "2025-04-12T22:12:23.534742+00:00"}

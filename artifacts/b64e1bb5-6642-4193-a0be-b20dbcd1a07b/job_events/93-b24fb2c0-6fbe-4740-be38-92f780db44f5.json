@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "b24fb2c0-6fbe-4740-be38-92f780db44f5", "counter": 93, "stdout": "                        multiple -v will increase the verbosity, the builtin", "start_line": 92, "end_line": 93, "runner_ident": "b64e1bb5-6642-4193-a0be-b20dbcd1a07b", "created": "2025-04-12T19:44:23.513240+00:00"}

@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "cb52d0cf-95d0-4955-9836-56bb8a008efc", "counter": 44, "stdout": "  --force-handlers      run handlers even if a task fails", "start_line": 43, "end_line": 44, "runner_ident": "08f29bbe-97ed-4118-a25e-ece325715abe", "created": "2025-04-12T18:13:42.262842+00:00"}

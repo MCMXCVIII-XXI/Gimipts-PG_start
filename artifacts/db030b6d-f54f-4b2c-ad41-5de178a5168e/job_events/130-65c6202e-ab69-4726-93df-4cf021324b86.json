@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "65c6202e-ab69-4726-93df-4cf021324b86", "counter": 130, "stdout": "  -b, --become          run operations with become (does not imply password", "start_line": 129, "end_line": 130, "runner_ident": "db030b6d-f54f-4b2c-ad41-5de178a5168e", "created": "2025-04-12T18:11:51.594608+00:00"}

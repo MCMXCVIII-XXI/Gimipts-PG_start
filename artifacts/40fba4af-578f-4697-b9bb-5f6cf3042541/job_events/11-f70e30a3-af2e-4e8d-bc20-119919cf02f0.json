@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "f70e30a3-af2e-4e8d-bc20-119919cf02f0", "counter": 11, "stdout": "\u001b[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method\u001b[0m", "start_line": 10, "end_line": 11, "runner_ident": "40fba4af-578f-4697-b9bb-5f6cf3042541", "created": "2025-04-15T16:01:21.804714+00:00"}

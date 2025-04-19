@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "5ee8eef9-08a3-43b6-b182-6adac86e1cf9", "counter": 25, "stdout": "                        [--skip-tags SKIP_TAGS] [-C] [-D] [-i INVENTORY]", "start_line": 24, "end_line": 25, "runner_ident": "f75b9cbf-d78a-454b-bc4e-bbdacb915ae7", "created": "2025-04-12T20:02:52.043844+00:00"}

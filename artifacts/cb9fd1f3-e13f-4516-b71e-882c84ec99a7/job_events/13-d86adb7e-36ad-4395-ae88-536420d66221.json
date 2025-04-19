@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "d86adb7e-36ad-4395-ae88-536420d66221", "counter": 13, "stdout": "\u001b[1;35m[WARNING]: Unable to parse /home/mcmxcviii/Documents/gh1/pg_install/inventory\u001b[0m", "start_line": 12, "end_line": 13, "runner_ident": "cb9fd1f3-e13f-4516-b71e-882c84ec99a7", "created": "2025-04-12T18:25:25.427336+00:00"}

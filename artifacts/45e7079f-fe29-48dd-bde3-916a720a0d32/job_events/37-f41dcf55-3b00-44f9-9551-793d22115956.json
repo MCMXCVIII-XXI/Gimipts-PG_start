@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "f41dcf55-3b00-44f9-9551-793d22115956", "counter": 37, "stdout": "\u001b[1;35m[WARNING]: Platform linux on host inventory.ini is using the discovered Python\u001b[0m", "start_line": 60, "end_line": 61, "runner_ident": "45e7079f-fe29-48dd-bde3-916a720a0d32", "created": "2025-04-15T15:57:51.686571+00:00"}
