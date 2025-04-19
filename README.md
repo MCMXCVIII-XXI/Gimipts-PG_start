@@ -42,13 +42,13 @@ pip install -r /путь/к/Gimipts-PG_start/requirements.txt
 Запуск с добавлением SSH-ключа в ssh-agent
 Позволяет вводить пароль от приватного ключа один раз за сессию:
 ```bash
-gimipts -H "IP_адрес1 IP_адрес2"
+gimipts -H "server1 server2"
 ```
 
 Запуск без добавления ключа в ssh-agent
 Требует ввод пароля от приватного ключа при каждом подключении:
 ```bash
-gimipts-pass -H "IP_адрес1 IP_адрес2"
+gimipts-pass -H "server1 server2"
 ```
 
 После запуска программа запросит пароль `BECOME password:` — он необходим для повышения привилегий (sudo) на целевых серверах.
