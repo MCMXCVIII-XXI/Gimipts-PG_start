@@ -67,6 +67,7 @@ gimipts-pass -H "IP_адрес1 IP_адрес2"
 
 - В файле `Gimipts-PG_start/ansible_run/playbook.yml` можно изменить версию PostgreSQL, пароли и другие параметры установки.
 - В `Gimipts-PG_start/gimipts_project/data.py` настраивается добавление серверов в инвентарь.
+-В run.py/run_pass.py можно настроить команду `ansible-playbook`.
 
 ## Проблемы и решения
 
