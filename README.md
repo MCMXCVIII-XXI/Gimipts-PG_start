@@ -5,7 +5,7 @@
 
 Основные компоненты:
 - `data.py` — обрабатывает введённые IP-адреса серверов и обновляет файл `inventory.ini`.
-- `run_pass.py` — основной скрипт, который запускает `data.py`, выполняет Ansible playbook `playbook.yml` с помощью команды `ansible-playbook Gimipts-PG_start/ansible_run/playbook.yml -i Gimipts-PG_start/ansible_run/inventory.ini --ask-become-pass`, и после завершения очищает файл `inventory.ini`.
+- `run.py/run_pass.py` — основной скрипт, который запускает `data.py`, выполняет Ansible playbook `playbook.yml` с помощью команды `ansible-playbook Gimipts-PG_start/ansible_run/playbook.yml -i Gimipts-PG_start/ansible_run/inventory.ini --ask-become-pass`, и после завершения очищает файл `inventory.ini`.
 
 ## Быстрый старт
 
