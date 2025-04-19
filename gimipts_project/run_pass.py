@@ -4,7 +4,7 @@ from gimipts_project.data import data_organization
 import subprocess
 import sys
 import os
-import re
+
 
 def run_ansible() -> None:
     try:

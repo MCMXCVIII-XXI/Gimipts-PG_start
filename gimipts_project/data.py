@@ -1,7 +1,7 @@
 import argparse
 import sys
 import os
-import re
+
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Connect to a remote server via SSH.')
