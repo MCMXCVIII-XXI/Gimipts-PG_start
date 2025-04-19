@@ -1,7 +1,7 @@
 ---
 - name: Install and configure PostgreSQL on the least loaded server
   hosts: all
-  remote_user: root
+  # remote_user: root
   gather_facts: yes
   become: yes
   vars:
@@ -36,7 +36,7 @@
 
 - name: Install PostgreSQL on target server
   hosts: target_group
-  remote_user: root
+  # remote_user: root
   gather_facts: yes
   become: yes
   become_method: sudo
