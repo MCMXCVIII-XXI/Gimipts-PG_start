@@ -13,7 +13,7 @@
 ```bash
 git clone https://github.com/MCMXCVIII-XXI/Gimipts-PG_start.git
 ```
-переходим в директорию:
+Переходим в директорию:
 ```
 cd Gimipts-PG_start/
 ```
