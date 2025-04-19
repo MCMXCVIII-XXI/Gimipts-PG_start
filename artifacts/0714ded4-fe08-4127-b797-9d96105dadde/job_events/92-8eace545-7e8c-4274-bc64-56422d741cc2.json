@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "8eace545-7e8c-4274-bc64-56422d741cc2", "counter": 92, "stdout": "  -v, --verbose         Causes Ansible to print more debug messages. Adding", "start_line": 91, "end_line": 92, "runner_ident": "0714ded4-fe08-4127-b797-9d96105dadde", "created": "2025-04-12T20:10:11.017016+00:00"}

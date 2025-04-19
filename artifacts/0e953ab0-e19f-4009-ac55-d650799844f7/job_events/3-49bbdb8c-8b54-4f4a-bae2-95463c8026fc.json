@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "49bbdb8c-8b54-4f4a-bae2-95463c8026fc", "counter": 3, "stdout": "\u001b[1;35mInvalid extra vars data supplied.\u001b[0m", "start_line": 2, "end_line": 3, "runner_ident": "0e953ab0-e19f-4009-ac55-d650799844f7", "created": "2025-04-12T18:08:01.372579+00:00"}

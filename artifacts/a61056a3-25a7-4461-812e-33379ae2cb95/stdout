@@ -1,0 +1,74 @@
+[0;34mansible-playbook [core 2.18.4][0m
+[0;34m  config file = None[0m
+[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible[0m
+[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections[0m
+[0;34m  executable location = /home/mcmxcviii/Documents/gh1/pg_install/venv/bin/ansible-playbook[0m
+[0;34m  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/home/mcmxcviii/Documents/gh1/pg_install/venv/bin/python)[0m
+[0;34m  jinja version = 3.1.6[0m
+[0;34m  libyaml = True[0m
+[0;34mNo config file found; using defaults[0m
+[0;34msetting up inventory plugins[0m
+[0;34mLoading collection ansible.builtin from [0m
+[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mscript declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts inventory source with ini plugin[0m
+[0;34mLoading callback plugin default of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/plugins/callback/default.py[0m
+[0;34mLoading callback plugin awx_display of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible_runner/display_callback/callback/awx_display.py[0m
+[0;34mAttempting to use 'awx_display' callback.[0m
+[0;34mSkipping callback 'awx_display', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'default' callback.[0m
+[0;34mSkipping callback 'default', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'junit' callback.[0m
+[0;34mAttempting to use 'minimal' callback.[0m
+[0;34mSkipping callback 'minimal', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'oneline' callback.[0m
+[0;34mSkipping callback 'oneline', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'tree' callback.[0m
+ ________________________
+< PLAYBOOK: playbook.yml >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;34mPositional arguments: playbook.yml[0m
+[0;34mverbosity: 6[0m
+[0;34mconnection: ssh[0m
+[0;34mbecome_method: sudo[0m
+[0;34mtags: ('all',)[0m
+[0;34minventory: ('/home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts',)[0m
+[0;34mextra_vars: ('@/home/mcmxcviii/Documents/gh1/pg_install/env/extravars',)[0m
+[0;34mforks: 5[0m
+[0;34m3 plays in playbook.yml[0m
+ __________________________
+< PLAY [Check server load] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ ____________________________________
+< TASK [Get system load information] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:7[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'echo ~mcmxcviii && sleep 0'"'"''[0m

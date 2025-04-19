@@ -1,0 +1,201 @@
+---
+- name: Install and configure PostgreSQL on the least loaded server
+  hosts: all
+  remote_user: root
+  gather_facts: yes
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.11
+  tasks:
+    - name: Gather server load
+      command: uptime
+      register: uptime_output
+
+    - name: Extract load average
+      set_fact:
+        load_average: "{{ uptime_output.stdout.split()[-3] | float }}"
+
+    - name: Save load information
+      set_fact:
+        server_loads: "{{ server_loads | default({}) | combine({inventory_hostname: load_average}) }}"
+
+    - name: Gather load information from all servers
+      set_fact:
+        all_server_loads: "{{ hostvars[item].server_loads }}"
+      loop: "{{ groups['all'] }}"
+      when: hostvars[item].server_loads is defined
+
+    - name: Find the server with the lowest load
+      set_fact:
+        least_loaded_server: "{{ all_server_loads | dict2items | sort(attribute='value') | first }}"
+
+    - name: Add least loaded server to target group
+      add_host:
+        name: "{{ least_loaded_server.key }}"
+        groups: target_group
+
+- name: Install PostgreSQL on target server
+  hosts: target_group
+  remote_user: root
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.11
+    postgres_version: "15"
+    postgres_password: "postgres"
+    student_password: "student"
+    secondary_server_ip: "{{ hostvars['server2']['ansible_host'] }}"
+    postgresql_service_name: >-
+      {% if ansible_distribution == 'Debian' %}
+      postgresql
+      {% elif ansible_distribution in ['AlmaLinux', 'RedHat'] %}
+      postgresql-{{ postgres_version }}
+      {% else %}
+      postgresql
+      {% endif %}
+    postgresql_conf_path: >-
+      {% if ansible_distribution == 'Debian' %}
+      {{ '/etc/postgresql/' + postgres_version + '/main/postgresql.conf' }}
+      {% else %}
+      {{ '/var/lib/pgsql/' + postgres_version + '/data/postgresql.conf' }}
+      {% endif %}
+    postgresql_hba_path: >-
+      {% if ansible_distribution == 'Debian' %}
+      {{ '/etc/postgresql/' + postgres_version + '/main/pg_hba.conf' }}
+      {% else %}
+      {{ '/var/lib/pgsql/' + postgres_version + '/data/pg_hba.conf' }}
+      {% endif %}
+  tasks:
+    - block:
+        - name: Install python3-psycopg2 on Debian
+          when: ansible_distribution == 'Debian'
+          apt:
+            name: python3-psycopg2
+            state: present
+            update_cache: yes
+
+        - name: Install python3-psycopg2 on AlmaLinux/RedHat
+          when: ansible_distribution in ['AlmaLinux', 'RedHat']
+          dnf:
+            name: python3-psycopg2
+            state: present
+
+        - name: Install Postgresql on Debian
+          when: ansible_distribution == 'Debian'
+          block:
+            - name: Add PostgreSQL APT repository key
+              apt_key:
+                url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+                state: present
+
+            - name: Add PostgreSQL APT repository
+              apt_repository:
+                repo: "deb http://apt.postgresql.org/pub/repos/apt {{ ansible_distribution_release }}-pgdg main"
+                state: present
+                update_cache: yes
+
+            - name: Install PostgreSQL packages
+              apt:
+                name:
+                  - postgresql-{{ postgres_version }}
+                  - postgresql-client-{{ postgres_version }}
+                state: present
+                update_cache: yes
+
+            - name: Ensure PostgreSQL service is started and enabled
+              service:
+                name: postgresql
+                state: started
+                enabled: yes
+
+    - name: Install Postgresql on AlmaLinux/RedHat
+      when: ansible_distribution in ['AlmaLinux', 'RedHat']
+      block:
+        - name: Install required packages
+          dnf:
+            name:
+              - https://download.postgresql.org/pub/repos/yum/reporpms/EL-{{ ansible_distribution_major_version }}-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            state: present
+
+        - name: Disable built-in PostgreSQL module
+          command: dnf -qy module disable postgresql
+
+        - name: Install PostgreSQL server, client and contrib packages
+          dnf:
+            name:
+              - postgresql{{ postgres_version }}-server
+              - postgresql{{ postgres_version }}-contrib
+            state: present
+
+        - name: Initialize PostgreSQL database
+          command: /usr/pgsql-{{ postgres_version }}/bin/postgresql-{{ postgres_version }}-setup initdb
+          register: initdb_result
+          args:
+            creates: /var/lib/pgsql/{{ postgres_version }}/data/postgresql.conf
+
+    - name: Configure PostgreSQL to listen on all interfaces
+      lineinfile:
+        path: "{{ (postgresql_conf_path) | trim }}"
+        regexp: "^#?listen_addresses\\s*="
+        line: "listen_addresses = '*'"
+        backup: yes
+      notify: restart postgresql
+
+    - name: Configure pg_hba.conf for local and remote access
+      blockinfile:
+        path: "{{ (postgresql_hba_path) | trim }}"
+        block: |
+          # Allow local connections with md5
+          local   all             all                                     md5
+          # Allow remote connections with md5
+          host    all             all             0.0.0.0/0               md5
+          # Allow student user from secondary server IP
+          host    all             student         {{ secondary_server_ip }}/32          md5
+      notify: restart postgresql
+
+    - name: Set password for postgres user
+      become_user: postgres
+      become_flags: '-i'
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+      postgresql_user:
+        name: postgres
+        password: "{{ postgres_password }}"
+        encrypted: yes
+        role_attr_flags: "SUPERUSER"
+        login_user: postgres
+        login_password: "{{ postgres_password }}"
+
+    - name: Create student user with password
+      become_user: postgres
+      become_flags: '-i'
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+      postgresql_user:
+        name: student
+        password: "{{ student_password }}"
+        role_attr_flags: "NOSUPERUSER,NOINHERIT,NOCREATEDB,NOCREATEROLE,NOREPLICATION"
+        state: present
+        login_user: postgres
+        login_password: "{{ postgres_password }}"
+
+    - name: Install postgresql client on AlmaLinux/RedHat
+      when: ansible_distribution in ['AlmaLinux', 'RedHat']
+      dnf:
+        name: postgresql
+        state: present
+
+    - name: Test PostgreSQL connection as student user
+      become_user: postgres
+      shell: |
+        PGPASSWORD="{{ student_password }}" /usr/bin/psql -U student -h localhost -d postgres -c "SELECT 1;" > /dev/null 2>&1
+      register: test_query
+      changed_when: false
+      failed_when: test_query.rc != 0
+
+  handlers:
+    - name: restart postgresql
+      service:
+        name: "{{ postgresql_service_name }}"
+        state: restarted

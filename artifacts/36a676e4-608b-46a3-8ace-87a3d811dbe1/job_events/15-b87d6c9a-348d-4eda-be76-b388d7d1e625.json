@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "b87d6c9a-348d-4eda-be76-b388d7d1e625", "counter": 15, "stdout": "\u001b[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini as it did not pass its verify_file() method\u001b[0m", "start_line": 14, "end_line": 15, "runner_ident": "36a676e4-608b-46a3-8ace-87a3d811dbe1", "created": "2025-04-15T18:34:02.015252+00:00"}

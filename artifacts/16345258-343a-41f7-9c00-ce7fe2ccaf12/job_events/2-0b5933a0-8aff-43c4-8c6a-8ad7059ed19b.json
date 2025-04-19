@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "0b5933a0-8aff-43c4-8c6a-8ad7059ed19b", "counter": 2, "stdout": "\u001b[1;35m[WARNING]: No hosts matched, nothing to do\u001b[0m", "start_line": 1, "end_line": 2, "runner_ident": "16345258-343a-41f7-9c00-ce7fe2ccaf12", "created": "2025-04-14T22:45:23.373064+00:00"}

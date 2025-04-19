@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "f0311cd5-880b-4fc6-a145-667a6dfd7041", "counter": 30, "stdout": "                        [--list-tags] [--step] [--start-at-task START_AT_TASK]", "start_line": 29, "end_line": 30, "runner_ident": "db030b6d-f54f-4b2c-ad41-5de178a5168e", "created": "2025-04-12T18:11:51.577556+00:00"}

@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "3e43fbbd-1a08-476b-8f64-fdcefa51957d", "counter": 17, "stdout": "\u001b[0;31mERROR! 'remote_pass' is not a valid attribute for a Play\u001b[0m", "start_line": 16, "end_line": 17, "runner_ident": "ab7fec91-89c0-4bd5-8361-89aa366c58fb", "created": "2025-04-12T21:28:14.754345+00:00"}

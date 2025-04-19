@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "dfaa507c-1cd0-407b-84cc-38d9165ef111", "counter": 17, "stdout": "\u001b[0;31mERROR! 'private_key_file' is not a valid attribute for a Play\u001b[0m", "start_line": 16, "end_line": 17, "runner_ident": "391f662b-f7c8-48c2-8c3d-6dfdb767d0d2", "created": "2025-04-12T21:30:39.741626+00:00"}

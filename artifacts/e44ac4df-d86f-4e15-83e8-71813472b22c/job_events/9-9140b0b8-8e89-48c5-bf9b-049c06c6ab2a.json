@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "9140b0b8-8e89-48c5-bf9b-049c06c6ab2a", "counter": 9, "stdout": "\u001b[0;34m  libyaml = True\u001b[0m", "start_line": 8, "end_line": 9, "runner_ident": "e44ac4df-d86f-4e15-83e8-71813472b22c", "created": "2025-04-12T22:10:35.102224+00:00"}

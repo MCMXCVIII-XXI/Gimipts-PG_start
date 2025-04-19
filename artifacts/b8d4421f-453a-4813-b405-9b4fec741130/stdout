@@ -1,0 +1,47 @@
+[0;34mansible-playbook [core 2.18.4][0m
+[0;34m  config file = /home/mcmxcviii/Documents/gh1/pg_install/ansible.cfg[0m
+[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /usr/lib/python3.13/site-packages/ansible[0m
+[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections[0m
+[0;34m  executable location = /usr/bin/ansible-playbook[0m
+[0;34m  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/usr/bin/python)[0m
+[0;34m  jinja version = 3.1.5[0m
+[0;34m  libyaml = True[0m
+[0;34mUsing /home/mcmxcviii/Documents/gh1/pg_install/ansible.cfg as config file[0m
+[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mscript declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts inventory source with ini plugin[0m
+[0;34mSkipping callback 'awx_display', as we already have a stdout callback.[0m
+[0;34mSkipping callback 'default', as we already have a stdout callback.[0m
+[0;34mSkipping callback 'minimal', as we already have a stdout callback.[0m
+[0;34mSkipping callback 'oneline', as we already have a stdout callback.[0m
+ ________________________
+< PLAYBOOK: playbook.yml >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+[0;34m2 plays in playbook.yml[0m
+ __________________________
+< PLAY [Check server load] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ ____________________________________
+< TASK [Get system load information] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:6[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o 'IdentityFile="/home/mcmxcviii/.ssh/id_ed25519"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'echo ~mcmxcviii && sleep 0'"'"''[0m

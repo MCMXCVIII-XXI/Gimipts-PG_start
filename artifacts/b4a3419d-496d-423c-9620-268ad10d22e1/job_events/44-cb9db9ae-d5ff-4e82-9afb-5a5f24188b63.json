@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "cb9db9ae-d5ff-4e82-9afb-5a5f24188b63", "counter": 44, "stdout": "Enter passphrase for key '/home/mcmxcviii/.ssh/id_ed25519': ", "start_line": 74, "end_line": 74, "runner_ident": "b4a3419d-496d-423c-9620-268ad10d22e1", "created": "2025-04-14T23:18:40.870152+00:00"}

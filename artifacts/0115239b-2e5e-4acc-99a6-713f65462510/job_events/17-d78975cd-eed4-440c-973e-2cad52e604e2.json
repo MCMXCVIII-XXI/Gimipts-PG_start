@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "d78975cd-eed4-440c-973e-2cad52e604e2", "counter": 17, "stdout": "\u001b[0;31mERROR! 'forks' is not a valid attribute for a Play\u001b[0m", "start_line": 16, "end_line": 17, "runner_ident": "0115239b-2e5e-4acc-99a6-713f65462510", "created": "2025-04-14T18:26:45.570030+00:00"}

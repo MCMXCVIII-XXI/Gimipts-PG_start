@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "4d10b18c-4890-4a8f-b03a-7ef4eddca90e", "counter": 19, "stdout": "\u001b[0;31mThe error appears to be in '/home/mcmxcviii/Documents/gh1/pg_install/playbook.yml': line 42, column 3, but may\u001b[0m", "start_line": 18, "end_line": 19, "runner_ident": "ab7fec91-89c0-4bd5-8361-89aa366c58fb", "created": "2025-04-12T21:28:14.754819+00:00"}

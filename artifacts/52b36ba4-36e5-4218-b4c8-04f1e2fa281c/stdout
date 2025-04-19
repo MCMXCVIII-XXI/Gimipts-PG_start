@@ -1,0 +1,77 @@
+[0;34mansible-playbook [core 2.18.4][0m
+[0;34m  config file = None[0m
+[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible[0m
+[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections[0m
+[0;34m  executable location = /home/mcmxcviii/Documents/gh1/pg_install/venv/bin/ansible-playbook[0m
+[0;34m  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/home/mcmxcviii/Documents/gh1/pg_install/venv/bin/python)[0m
+[0;34m  jinja version = 3.1.6[0m
+[0;34m  libyaml = True[0m
+[0;34mNo config file found; using defaults[0m
+[0;34msetting up inventory plugins[0m
+[0;34mLoading collection ansible.builtin from [0m
+[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mscript declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts inventory source with ini plugin[0m
+[0;34mLoading callback plugin default of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/plugins/callback/default.py[0m
+[0;34mLoading callback plugin awx_display of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible_runner/display_callback/callback/awx_display.py[0m
+[0;34mAttempting to use 'awx_display' callback.[0m
+[0;34mSkipping callback 'awx_display', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'default' callback.[0m
+[0;34mSkipping callback 'default', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'junit' callback.[0m
+[0;34mAttempting to use 'minimal' callback.[0m
+[0;34mSkipping callback 'minimal', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'oneline' callback.[0m
+[0;34mSkipping callback 'oneline', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'tree' callback.[0m
+ ________________________
+< PLAYBOOK: playbook.yml >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;34mPositional arguments: playbook.yml[0m
+[0;34mverbosity: 5[0m
+[0;34mconnection: ssh[0m
+[0;34mbecome_method: sudo[0m
+[0;34mtags: ('all',)[0m
+[0;34minventory: ('/home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts',)[0m
+[0;34mextra_vars: ('@/home/mcmxcviii/Documents/gh1/pg_install/env/extravars',)[0m
+[0;34mforks: 5[0m
+[0;34m3 plays in playbook.yml[0m
+ __________________________
+< PLAY [Check server load] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ _____________________________
+< TASK [Extract average load] >
+ -----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:13[0m
+[0;31mfatal: [inventory.ini]: FAILED! => {[0m
+[0;31m    "msg": "The task includes an option with an undefined variable.. 'uptime_output' is undefined\n\nThe error appears to be in '/home/mcmxcviii/Documents/gh1/pg_install/playbook.yml': line 13, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: Extract average load\n      ^ here\n"[0m
+[0;31m}[0m
+ ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;31minventory.ini[0m              : ok=0    changed=0    unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "0423b963-faa1-4f90-a69b-a24af1aea60c", "counter": 5, "stdout": "\u001b[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections\u001b[0m", "start_line": 4, "end_line": 5, "runner_ident": "b206def1-077f-48aa-b9ff-bcf72ea88eca", "created": "2025-04-14T23:19:14.709626+00:00"}

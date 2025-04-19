@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "9240f43f-ceef-4176-8f09-4f9249af3e6b", "counter": 120, "stdout": "                        connection type to use (default=ssh)", "start_line": 119, "end_line": 120, "runner_ident": "cb9fd1f3-e13f-4516-b71e-882c84ec99a7", "created": "2025-04-12T18:25:25.442749+00:00"}

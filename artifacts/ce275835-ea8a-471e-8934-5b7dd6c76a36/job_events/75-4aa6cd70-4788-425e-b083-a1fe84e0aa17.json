@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "4aa6cd70-4788-425e-b083-a1fe84e0aa17", "counter": 75, "stdout": "                        \"/plugins/modules:/usr/share/ansible/plugins/modules\"", "start_line": 74, "end_line": 75, "runner_ident": "ce275835-ea8a-471e-8934-5b7dd6c76a36", "created": "2025-04-12T20:03:33.922602+00:00"}

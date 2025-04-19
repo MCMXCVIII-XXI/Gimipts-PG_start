@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "161f2f0c-30c9-4364-ae12-ccd888fc9f4a", "counter": 64, "stdout": "  -C, --check           don't make any changes; instead, try to predict some", "start_line": 63, "end_line": 64, "runner_ident": "169c3c46-c455-4c3f-ba72-3fd6e8da1e44", "created": "2025-04-12T17:35:49.963740+00:00"}

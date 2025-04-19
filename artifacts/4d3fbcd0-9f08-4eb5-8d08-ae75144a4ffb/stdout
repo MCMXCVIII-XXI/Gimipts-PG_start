@@ -1,0 +1,619 @@
+[0;34mansible-playbook [core 2.18.4][0m
+[0;34m  config file = /home/mcmxcviii/Documents/gh1/pg_install/ansible.cfg[0m
+[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible[0m
+[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections[0m
+[0;34m  executable location = /home/mcmxcviii/Documents/gh1/pg_install/venv/bin/ansible-playbook[0m
+[0;34m  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/home/mcmxcviii/Documents/gh1/pg_install/venv/bin/python)[0m
+[0;34m  jinja version = 3.1.6[0m
+[0;34m  libyaml = True[0m
+[0;34mUsing /home/mcmxcviii/Documents/gh1/pg_install/ansible.cfg as config file[0m
+[0;34msetting up inventory plugins[0m
+[0;34mLoading collection ansible.builtin from [0m
+[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini as it did not pass its verify_file() method[0m
+[0;34mscript declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini as it did not pass its verify_file() method[0m
+[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini as it did not pass its verify_file() method[0m
+[0;34myaml declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini as it did not pass its verify_file() method[0m
+[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory.ini inventory source with ini plugin[0m
+[0;34mLoading callback plugin default of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/plugins/callback/default.py[0m
+[0;34mLoading callback plugin awx_display of type stdout, v2.0 from /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible_runner/display_callback/callback/awx_display.py[0m
+[0;34mAttempting to use 'awx_display' callback.[0m
+[0;34mSkipping callback 'awx_display', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'default' callback.[0m
+[0;34mSkipping callback 'default', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'junit' callback.[0m
+[0;34mAttempting to use 'minimal' callback.[0m
+[0;34mSkipping callback 'minimal', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'oneline' callback.[0m
+[0;34mSkipping callback 'oneline', as we already have a stdout callback.[0m
+[0;34mAttempting to use 'tree' callback.[0m
+ ________________________
+< PLAYBOOK: playbook.yml >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;34mPositional arguments: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml[0m
+[0;34mverbosity: 5[0m
+[0;34mconnection: ansible.cfg[0m
+[0;34mbecome_method: sudo[0m
+[0;34mtags: ('all',)[0m
+[0;34minventory: ('/home/mcmxcviii/Documents/gh1/pg_install/inventory.ini',)[0m
+[0;34mforks: 1[0m
+[0;34m2 plays in /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml[0m
+ __________________________
+< PLAY [Check server load] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ ____________________________________
+< TASK [Get system load information] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:9[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'echo ~mcmxcviii && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'/home/mcmxcviii\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'echo ~mcmxcviii && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/mcmxcviii/.ansible/tmp `"&& mkdir "` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447 `" && echo ansible-tmp-1744736177.9148195-75325-118711224929447="` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447 `" ) && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'ansible-tmp-1744736177.9148195-75325-118711224929447=/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'( umask 77 && mkdir -p \\\\"` echo /home/mcmxcviii/.ansible/tmp `\\\\"&& mkdir \\\\"` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447 `\\\\" && echo ansible-tmp-1744736177.9148195-75325-118711224929447=\\\\"` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447 `\\\\" ) && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34mIncluding module_utils file ansible/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/basic.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_text.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/_utils.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/arg_spec.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/collections.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/file.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/locale.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/parameters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/process.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/sys_info.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/converters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/formatters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/validation.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/warnings.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/selinux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/distro/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/distro/_distro.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/errors.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/parsing/convert_bool.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/parsing/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/pycompat24.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/six/__init__.py[0m
+[0;34m<server1> Attempting python interpreter discovery[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.13'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.11\n/usr/bin/python3\n/usr/bin/python3\nENDFOUND\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'echo PLATFORM; uname; echo FOUND; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.13\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.12\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.11\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.10\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.9\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.8\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'/usr/bin/python3\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3\\\\\'\\\\"\\\\\'\\\\"\\\\\'; echo ENDFOUND && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'/usr/bin/python3.11 && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'{"platform_dist_result": [], "osrelease_content": "PRETTY_NAME=\\"Debian GNU/Linux 12 (bookworm)\\"\\nNAME=\\"Debian GNU/Linux\\"\\nVERSION_ID=\\"12\\"\\nVERSION=\\"12 (bookworm)\\"\\nVERSION_CODENAME=bookworm\\nID=debian\\nHOME_URL=\\"https://www.debian.org/\\"\\nSUPPORT_URL=\\"https://www.debian.org/support\\"\\nBUG_REPORT_URL=\\"https://bugs.debian.org/\\"\\n"}\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'/usr/bin/python3.11 && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<server1> Python interpreter discovery fallback (unsupported Linux distribution: debian)[0m
+[0;34mUsing module file /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/modules/command.py[0m
+[0;34m<192.168.122.181> PUT /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmphh7cdu0q TO /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set sftp_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC sftp -b - -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' '[192.168.122.181]'[0m
+[0;34m<192.168.122.181> (0, b'sftp> put /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmphh7cdu0q /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: /usr/bin/ssh "-oForwardX11 no" "-oPermitLocalCommand no" "-oClearAllForwardings yes" "-oControlMaster no" "-obatchmode yes" -v -v -v -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" "-oForwardAgent no" -s -- 192.168.122.181 sftp\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug2: Remote version: 3\r\ndebug2: Server supports extension "posix-rename@openssh.com" revision 1\r\ndebug2: Server supports extension "statvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "fstatvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "hardlink@openssh.com" revision 1\r\ndebug2: Server supports extension "fsync@openssh.com" revision 1\r\ndebug2: Server supports extension "lsetstat@openssh.com" revision 1\r\ndebug2: Server supports extension "limits@openssh.com" revision 1\r\ndebug2: Server supports extension "expand-path@openssh.com" revision 1\r\ndebug2: Server supports extension "copy-data" revision 1\r\ndebug2: Unrecognised server extension "home-directory"\r\ndebug2: Server supports extension "users-groups-by-id@openssh.com" revision 1\r\ndebug3: Sent message limits@openssh.com I:1\r\ndebug3: Received limits reply T:201 I:1\r\ndebug3: server upload/download buffer sizes 261120 / 261120; using 261120 / 261120\r\ndebug3: server handle limit 1019; using 64\r\ndebug2: Sending SSH2_FXP_REALPATH "."\r\ndebug3: Sent message fd 3 T:16 I:2\r\ndebug3: SSH2_FXP_REALPATH . -> /home/mcmxcviii\r\ndebug3: Looking up /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmphh7cdu0q\r\ndebug2: Sending SSH2_FXP_STAT "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py"\r\ndebug3: Sent message fd 3 T:17 I:3\r\ndebug1: stat remote: No such file or directory\r\ndebug2: sftp_upload: upload local "/home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmphh7cdu0q" to remote "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py"\r\ndebug2: Sending SSH2_FXP_OPEN "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py"\r\ndebug3: Sent dest message SSH2_FXP_OPEN I:4 P:/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py M:0x001a\r\ndebug3: Sent message SSH2_FXP_WRITE I:6 O:0 S:119996\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 6 119996 bytes at 0\r\ndebug3: Sent message SSH2_FXP_CLOSE I:5\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'chmod u+x /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/ /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'chmod u+x /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/ /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' -tt 192.168.122.181 '/bin/sh -c '"'"'/usr/bin/python3.11 /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'\r\n{"changed": true, "stdout": " 19:56:18 up  5:04,  2 users,  load average: 0,17, 0,05, 0,01", "stderr": "", "rc": 0, "cmd": ["uptime"], "start": "2025-04-15 19:56:18.282803", "end": "2025-04-15 19:56:18.289345", "delta": "0:00:00.006542", "msg": "", "invocation": {"module_args": {"_raw_params": "uptime", "_uses_shell": false, "expand_argument_vars": true, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}}\r\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" -tt 192.168.122.181 "/bin/sh -c \\\\\'/usr/bin/python3.11 /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/AnsiballZ_command.py && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\nShared connection to 192.168.122.181 closed.\r\n')[0m
+[0;34m<192.168.122.181> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.181> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.181> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.181> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.181> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.181> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.181> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75")[0m
+[0;34m<192.168.122.181> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/baaeee2b75"' 192.168.122.181 '/bin/sh -c '"'"'rm -f -r /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/ > /dev/null 2>&1 && sleep 0'"'"''[0m
+[0;34m<192.168.122.181> (0, b'', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/baaeee2b75\\\\" 192.168.122.181 "/bin/sh -c \\\\\'rm -f -r /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736177.9148195-75325-118711224929447/ > /dev/null 2>&1 && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.181 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/baaeee2b75\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75117\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[1;35m[WARNING]: Platform linux on host server1 is using the discovered Python[0m
+[1;35minterpreter at /usr/bin/python3.11, but future installation of another Python[0m
+[1;35minterpreter could change the meaning of that path. See[0m
+[1;35mhttps://docs.ansible.com/ansible-[0m
+[1;35mcore/2.18/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;33mchanged: [server1] => {[0m
+[0;33m    "ansible_facts": {[0m
+[0;33m        "discovered_interpreter_python": "/usr/bin/python3.11"[0m
+[0;33m    },[0m
+[0;33m    "changed": true,[0m
+[0;33m    "cmd": [[0m
+[0;33m        "uptime"[0m
+[0;33m    ],[0m
+[0;33m    "delta": "0:00:00.006542",[0m
+[0;33m    "end": "2025-04-15 19:56:18.289345",[0m
+[0;33m    "invocation": {[0m
+[0;33m        "module_args": {[0m
+[0;33m            "_raw_params": "uptime",[0m
+[0;33m            "_uses_shell": false,[0m
+[0;33m            "argv": null,[0m
+[0;33m            "chdir": null,[0m
+[0;33m            "creates": null,[0m
+[0;33m            "executable": null,[0m
+[0;33m            "expand_argument_vars": true,[0m
+[0;33m            "removes": null,[0m
+[0;33m            "stdin": null,[0m
+[0;33m            "stdin_add_newline": true,[0m
+[0;33m            "strip_empty_ends": true[0m
+[0;33m        }[0m
+[0;33m    },[0m
+[0;33m    "msg": "",[0m
+[0;33m    "rc": 0,[0m
+[0;33m    "start": "2025-04-15 19:56:18.282803",[0m
+[0;33m    "stderr": "",[0m
+[0;33m    "stderr_lines": [],[0m
+[0;33m    "stdout": " 19:56:18 up  5:04,  2 users,  load average: 0,17, 0,05, 0,01",[0m
+[0;33m    "stdout_lines": [[0m
+[0;33m        " 19:56:18 up  5:04,  2 users,  load average: 0,17, 0,05, 0,01"[0m
+[0;33m    ][0m
+[0;33m}[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'echo ~mcmxcviii && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'/home/mcmxcviii\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'echo ~mcmxcviii && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/mcmxcviii/.ansible/tmp `"&& mkdir "` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429 `" && echo ansible-tmp-1744736178.4290104-75335-184013613670429="` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429 `" ) && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'ansible-tmp-1744736178.4290104-75335-184013613670429=/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'( umask 77 && mkdir -p \\\\"` echo /home/mcmxcviii/.ansible/tmp `\\\\"&& mkdir \\\\"` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429 `\\\\" && echo ansible-tmp-1744736178.4290104-75335-184013613670429=\\\\"` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429 `\\\\" ) && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<server2> Attempting python interpreter discovery[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.13'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.11\n/usr/bin/python3.9\n/usr/bin/python3\n/usr/bin/python3\nENDFOUND\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'echo PLATFORM; uname; echo FOUND; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.13\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.12\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.11\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.10\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.9\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3.8\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'/usr/bin/python3\\\\\'\\\\"\\\\\'\\\\"\\\\\'; command -v \\\\\'\\\\"\\\\\'\\\\"\\\\\'python3\\\\\'\\\\"\\\\\'\\\\"\\\\\'; echo ENDFOUND && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'/usr/bin/python3.11 && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"AlmaLinux\\"\\nVERSION=\\"9.5 (Teal Serval)\\"\\nID=\\"almalinux\\"\\nID_LIKE=\\"rhel centos fedora\\"\\nVERSION_ID=\\"9.5\\"\\nPLATFORM_ID=\\"platform:el9\\"\\nPRETTY_NAME=\\"AlmaLinux 9.5 (Teal Serval)\\"\\nANSI_COLOR=\\"0;34\\"\\nLOGO=\\"fedora-logo-icon\\"\\nCPE_NAME=\\"cpe:/o:almalinux:almalinux:9::baseos\\"\\nHOME_URL=\\"https://almalinux.org/\\"\\nDOCUMENTATION_URL=\\"https://wiki.almalinux.org/\\"\\nBUG_REPORT_URL=\\"https://bugs.almalinux.org/\\"\\n\\nALMALINUX_MANTISBT_PROJECT=\\"AlmaLinux-9\\"\\nALMALINUX_MANTISBT_PROJECT_VERSION=\\"9.5\\"\\nREDHAT_SUPPORT_PRODUCT=\\"AlmaLinux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"9.5\\"\\nSUPPORT_END=2032-06-01\\n"}\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'/usr/bin/python3.11 && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<server2> Python interpreter discovery fallback (unsupported Linux distribution: almalinux)[0m
+[0;34mUsing module file /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/modules/command.py[0m
+[0;34m<192.168.122.34> PUT /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmpl2jkcjp4 TO /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set sftp_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC sftp -b - -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' '[192.168.122.34]'[0m
+[0;34m<192.168.122.34> (0, b'sftp> put /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmpl2jkcjp4 /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: /usr/bin/ssh "-oForwardX11 no" "-oPermitLocalCommand no" "-oClearAllForwardings yes" "-oControlMaster no" "-obatchmode yes" -v -v -v -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" "-oForwardAgent no" -s -- 192.168.122.34 sftp\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug2: Remote version: 3\r\ndebug2: Server supports extension "posix-rename@openssh.com" revision 1\r\ndebug2: Server supports extension "statvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "fstatvfs@openssh.com" revision 2\r\ndebug2: Server supports extension "hardlink@openssh.com" revision 1\r\ndebug2: Server supports extension "fsync@openssh.com" revision 1\r\ndebug2: Server supports extension "lsetstat@openssh.com" revision 1\r\ndebug2: Server supports extension "limits@openssh.com" revision 1\r\ndebug2: Server supports extension "expand-path@openssh.com" revision 1\r\ndebug3: Sent message limits@openssh.com I:1\r\ndebug3: Received limits reply T:201 I:1\r\ndebug3: server upload/download buffer sizes 261120 / 261120; using 261120 / 261120\r\ndebug3: server handle limit 1019; using 64\r\ndebug2: Sending SSH2_FXP_REALPATH "."\r\ndebug3: Sent message fd 3 T:16 I:2\r\ndebug3: SSH2_FXP_REALPATH . -> /home/mcmxcviii\r\ndebug3: Looking up /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmpl2jkcjp4\r\ndebug2: Sending SSH2_FXP_STAT "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py"\r\ndebug3: Sent message fd 3 T:17 I:3\r\ndebug1: stat remote: No such file or directory\r\ndebug2: sftp_upload: upload local "/home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmpl2jkcjp4" to remote "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py"\r\ndebug2: Sending SSH2_FXP_OPEN "/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py"\r\ndebug3: Sent dest message SSH2_FXP_OPEN I:4 P:/home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py M:0x001a\r\ndebug3: Sent message SSH2_FXP_WRITE I:6 O:0 S:119996\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: In write loop, ack for 6 119996 bytes at 0\r\ndebug3: Sent message SSH2_FXP_CLOSE I:5\r\ndebug3: SSH2_FXP_STATUS 0\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'chmod u+x /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/ /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'chmod u+x /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/ /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' -tt 192.168.122.34 '/bin/sh -c '"'"'/usr/bin/python3.11 /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'\r\n{"changed": true, "stdout": " 19:56:18 up  5:04,  3 users,  load average: 0,05, 0,01, 0,00", "stderr": "", "rc": 0, "cmd": ["uptime"], "start": "2025-04-15 19:56:18.981018", "end": "2025-04-15 19:56:18.985511", "delta": "0:00:00.004493", "msg": "", "invocation": {"module_args": {"_raw_params": "uptime", "_uses_shell": false, "expand_argument_vars": true, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}}\r\n', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" -tt 192.168.122.34 "/bin/sh -c \\\\\'/usr/bin/python3.11 /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/AnsiballZ_command.py && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\nShared connection to 192.168.122.34 closed.\r\n')[0m
+[0;34m<192.168.122.34> ESTABLISH SSH CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<192.168.122.34> SSH: ansible.cfg set ssh_args: (-C)(-o)(ControlMaster=auto)(-o)(ControlPersist=60s)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_HOST_KEY_CHECKING/host_key_checking disabled: (-o)(StrictHostKeyChecking=no)[0m
+[0;34m<192.168.122.34> SSH: ansible_password/ansible_ssh_password not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User="mcmxcviii")[0m
+[0;34m<192.168.122.34> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)[0m
+[0;34m<192.168.122.34> SSH: Set ssh_common_args: ()[0m
+[0;34m<192.168.122.34> SSH: Set ssh_extra_args: ()[0m
+[0;34m<192.168.122.34> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f")[0m
+[0;34m<192.168.122.34> SSH: EXEC ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="mcmxcviii"' -o ConnectTimeout=10 -o 'ControlPath="/home/mcmxcviii/.ansible/cp/de121b807f"' 192.168.122.34 '/bin/sh -c '"'"'rm -f -r /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/ > /dev/null 2>&1 && sleep 0'"'"''[0m
+[0;34m<192.168.122.34> (0, b'', b'debug1: OpenSSH_10.0p2, OpenSSL 3.5.0 8 Apr 2025\r\ndebug3: Running on Linux 6.14.2-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:47 +0000 x86_64\r\ndebug3: Started with: ssh -vvvvv -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=\\\\"mcmxcviii\\\\" -o ConnectTimeout=10 -o ControlPath=\\\\"/home/mcmxcviii/.ansible/cp/de121b807f\\\\" 192.168.122.34 "/bin/sh -c \\\\\'rm -f -r /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736178.4290104-75335-184013613670429/ > /dev/null 2>&1 && sleep 0\\\\\'"\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf\r\ndebug3: /etc/ssh/ssh_config line 2: Including file /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf depth 0\r\ndebug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf\r\ndebug2: resolve_canonicalize: hostname 192.168.122.34 is address\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts\' -> \'/home/mcmxcviii/.ssh/known_hosts\'\r\ndebug3: expanded UserKnownHostsFile \'~/.ssh/known_hosts2\' -> \'/home/mcmxcviii/.ssh/known_hosts2\'\r\ndebug1: auto-mux: Trying existing master at \'/home/mcmxcviii/.ansible/cp/de121b807f\'\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 75142\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet_timeout: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\n')[0m
+[1;35mcore/2.18/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;33mchanged: [server2] => {[0m
+[0;33m    "ansible_facts": {[0m
+[0;33m        "discovered_interpreter_python": "/usr/bin/python3.11"[0m
+[0;33m    },[0m
+[0;33m    "changed": true,[0m
+[0;33m    "cmd": [[0m
+[0;33m        "uptime"[0m
+[0;33m    ],[0m
+[0;33m    "delta": "0:00:00.004493",[0m
+[0;33m    "end": "2025-04-15 19:56:18.985511",[0m
+[0;33m    "invocation": {[0m
+[0;33m        "module_args": {[0m
+[0;33m            "_raw_params": "uptime",[0m
+[0;33m            "_uses_shell": false,[0m
+[0;33m            "argv": null,[0m
+[0;33m            "chdir": null,[0m
+[0;33m            "creates": null,[0m
+[0;33m            "executable": null,[0m
+[0;33m            "expand_argument_vars": true,[0m
+[0;33m            "removes": null,[0m
+[0;33m            "stdin": null,[0m
+[0;33m            "stdin_add_newline": true,[0m
+[0;33m            "strip_empty_ends": true[0m
+[0;33m        }[0m
+[0;33m    },[0m
+[0;33m    "msg": "",[0m
+[0;33m    "rc": 0,[0m
+[0;33m    "start": "2025-04-15 19:56:18.981018",[0m
+[0;33m    "stderr": "",[0m
+[0;33m    "stderr_lines": [],[0m
+[0;33m    "stdout": " 19:56:18 up  5:04,  3 users,  load average: 0,05, 0,01, 0,00",[0m
+[0;33m    "stdout_lines": [[0m
+[0;33m        " 19:56:18 up  5:04,  3 users,  load average: 0,05, 0,01, 0,00"[0m
+[0;33m    ][0m
+[0;33m}[0m
+ _____________________________
+< TASK [Extract average load] >
+ -----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:13[0m
+[0;32mok: [server1] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "load_average": "0.0"[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+[0;32mok: [server2] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "load_average": "0.0"[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+ ______________________________
+< TASK [Save load information] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:17[0m
+[0;32mok: [server1] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "server_loads": {[0m
+[0;32m            "server1": "0.0"[0m
+[0;32m        }[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+[0;32mok: [server2] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "server_loads": {[0m
+[0;32m            "server2": "0.0"[0m
+[0;32m        }[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+ _______________________________________
+< PLAY [Select the least loaded server] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:21[0m
+[0;34m<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: mcmxcviii[0m
+[0;34m<127.0.0.1> EXEC /bin/sh -c 'echo ~mcmxcviii && sleep 0'[0m
+[0;34m<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/mcmxcviii/.ansible/tmp `"&& mkdir "` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717 `" && echo ansible-tmp-1744736179.3052962-75357-250921586202717="` echo /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717 `" ) && sleep 0'[0m
+[0;34mIncluding module_utils file ansible/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/basic.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_text.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/_utils.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/arg_spec.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/file.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/locale.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/parameters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/collections.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/process.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/sys_info.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/converters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/text/formatters.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/validation.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/common/warnings.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/selinux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/distro/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/distro/_distro.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/errors.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/ansible_collector.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/typing.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/collector.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/compat.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/default_collectors.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/aix.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/base.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/darwin.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/dragonfly.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/freebsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/hpux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/hurd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/linux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_internal/_concurrent/_futures.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_internal/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_internal/_concurrent/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/_internal/_concurrent/_daemon_threading.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/netbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/openbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/hardware/sunos.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/namespace.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/aix.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/base.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/darwin.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/dragonfly.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/fc_wwn.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/freebsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/generic_bsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/hpux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/hurd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/iscsi.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/linux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/netbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/nvme.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/openbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/network/sunos.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/other/facter.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/other/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/other/ohai.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/sysctl.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/apparmor.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/caps.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/chroot.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/cmdline.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/date_time.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/datetime.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/distribution.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/dns.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/env.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/fips.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/loadavg.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/local.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/lsb.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/pkg_mgr.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/platform.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/python.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/selinux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/service_mgr.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/compat/version.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/ssh_pub_keys.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/systemd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/system/user.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/timeout.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/utils.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/base.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/dragonfly.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/freebsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/hpux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/linux.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/netbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/openbsd.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/sunos.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/facts/virtual/sysctl.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/parsing/convert_bool.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/parsing/__init__.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/pycompat24.py[0m
+[0;34mIncluding module_utils file ansible/module_utils/six/__init__.py[0m
+[0;34mUsing module file /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible/modules/setup.py[0m
+[0;34m<127.0.0.1> PUT /home/mcmxcviii/.ansible/tmp/ansible-local-75312nu6nhtyt/tmpg90fpv_6 TO /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717/AnsiballZ_setup.py[0m
+[0;34m<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717/ /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717/AnsiballZ_setup.py && sleep 0'[0m
+[0;34m<127.0.0.1> EXEC /bin/sh -c '/home/mcmxcviii/Documents/gh1/pg_install/venv/bin/python /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717/AnsiballZ_setup.py && sleep 0'[0m
+[0;34m<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/mcmxcviii/.ansible/tmp/ansible-tmp-1744736179.3052962-75357-250921586202717/ > /dev/null 2>&1 && sleep 0'[0m
+[0;32mok: [localhost][0m
+ _________________________________________________
+< TASK [Gather load information from all servers] >
+ -------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:24[0m
+[0;32mok: [localhost] => (item=server1) => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "all_server_loads": {[0m
+[0;32m            "server1": "0.0"[0m
+[0;32m        }[0m
+[0;32m    },[0m
+[0;32m    "ansible_loop_var": "item",[0m
+[0;32m    "changed": false,[0m
+[0;32m    "item": "server1"[0m
+[0;32m}[0m
+[0;32mok: [localhost] => (item=server2) => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "all_server_loads": {[0m
+[0;32m            "server2": "0.0"[0m
+[0;32m        }[0m
+[0;32m    },[0m
+[0;32m    "ansible_loop_var": "item",[0m
+[0;32m    "changed": false,[0m
+[0;32m    "item": "server2"[0m
+[0;32m}[0m
+ _____________________________________________
+< TASK [Find the server with the lowest load] >
+ ---------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:30[0m
+[0;32mok: [localhost] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "least_loaded_server": {[0m
+[0;32m            "key": "server2",[0m
+[0;32m            "value": "0.0"[0m
+[0;32m        }[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+ _______________________________________
+< TASK [Output the least loaded server] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:34[0m
+[0;32mok: [localhost] => {[0m
+[0;32m    "msg": "Least loaded server: server2 with load 0.0"[0m
+[0;32m}[0m
+ _________________________________________________
+< TASK [Set variable for the least loaded server] >
+ -------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[1;30mtask path: /home/mcmxcviii/Documents/gh1/pg_install/playbook.yml:38[0m
+[0;32mok: [localhost] => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "target_server": "server2"[0m
+[0;32m    },[0m
+[0;32m    "changed": false[0m
+[0;32m}[0m
+ ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;32mlocalhost[0m                  : [0;32mok=5   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[0;33mserver1[0m                    : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[0;33mserver2[0m                    : [0;32mok=3   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

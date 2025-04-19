@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "2577d742-6f15-4dc5-bef3-bbf9eee45558", "counter": 126, "stdout": "                        privilege escalation method to use (default=sudo), use", "start_line": 125, "end_line": 126, "runner_ident": "99af3393-7d70-4ed8-837e-0d9d9c404893", "created": "2025-04-12T18:12:50.465830+00:00"}

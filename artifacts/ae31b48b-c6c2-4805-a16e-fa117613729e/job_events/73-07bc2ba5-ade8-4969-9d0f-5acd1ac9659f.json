@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "07bc2ba5-ade8-4969-9d0f-5acd1ac9659f", "counter": 73, "stdout": "                        ask for privilege escalation password", "start_line": 72, "end_line": 73, "runner_ident": "ae31b48b-c6c2-4805-a16e-fa117613729e", "created": "2025-04-12T18:22:38.256520+00:00"}

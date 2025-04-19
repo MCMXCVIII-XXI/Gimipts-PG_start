@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "e575026d-1aaf-4fb7-afc4-7c152aaa800f", "counter": 4, "stdout": "\u001b[0;34m  ansible python module location = /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible\u001b[0m", "start_line": 3, "end_line": 4, "runner_ident": "c9a42e7d-d573-4d0b-a0ab-49ad9ac292c2", "created": "2025-04-14T18:35:00.873147+00:00"}

@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "dc03100c-0a0d-4c2b-8538-65e08668834c", "counter": 81, "stdout": "  -f, --forks FORKS     specify number of parallel processes to use", "start_line": 80, "end_line": 81, "runner_ident": "2dbde6f7-c855-4b56-bcff-2a4ebfe4de50", "created": "2025-04-12T20:09:47.642064+00:00"}

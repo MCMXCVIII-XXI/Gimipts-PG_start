@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "e0980670-dd6e-42c2-8354-a66ac839b88c", "counter": 105, "stdout": "                        specify extra arguments to pass to scp only (e.g. -l)", "start_line": 104, "end_line": 105, "runner_ident": "d4bcae7a-a5c9-4a18-bf67-1829b6574452", "created": "2025-04-12T20:04:11.482965+00:00"}

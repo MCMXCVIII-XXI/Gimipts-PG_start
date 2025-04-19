@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "d6b5dc37-d22b-4c19-a9d2-9d84a64365b4", "counter": 28, "stdout": "                        --vault-password-file VAULT_PASSWORD_FILES] [-f FORKS]", "start_line": 27, "end_line": 28, "runner_ident": "b40af0ef-bdd0-4780-b2a5-32478a759c24", "created": "2025-04-12T20:17:31.583321+00:00"}

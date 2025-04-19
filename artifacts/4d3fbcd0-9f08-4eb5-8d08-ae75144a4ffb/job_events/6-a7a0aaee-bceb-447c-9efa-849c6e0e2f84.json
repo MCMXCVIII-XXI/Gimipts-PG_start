@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "a7a0aaee-bceb-447c-9efa-849c6e0e2f84", "counter": 6, "stdout": "\u001b[0;34m  executable location = /home/mcmxcviii/Documents/gh1/pg_install/venv/bin/ansible-playbook\u001b[0m", "start_line": 5, "end_line": 6, "runner_ident": "4d3fbcd0-9f08-4eb5-8d08-ae75144a4ffb", "created": "2025-04-15T16:56:17.579933+00:00"}

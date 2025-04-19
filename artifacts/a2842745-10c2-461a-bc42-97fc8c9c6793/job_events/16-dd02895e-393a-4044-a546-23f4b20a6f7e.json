@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "dd02895e-393a-4044-a546-23f4b20a6f7e", "counter": 16, "stdout": "\u001b[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts inventory source with ini plugin\u001b[0m", "start_line": 15, "end_line": 16, "runner_ident": "a2842745-10c2-461a-bc42-97fc8c9c6793", "created": "2025-04-12T22:09:37.205960+00:00"}

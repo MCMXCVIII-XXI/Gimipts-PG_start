@@ -1,0 +1,49 @@
+ _____________
+< PLAY [AAAA] >
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+[1;35m[WARNING]: Platform linux on host server1 is using the discovered Python[0m
+[1;35minterpreter at /usr/bin/python3.11, but future installation of another Python[0m
+[1;35minterpreter could change the meaning of that path. See[0m
+[1;35mhttps://docs.ansible.com/ansible-[0m
+[1;35mcore/2.18/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32mok: [server1][0m
+[1;35mcore/2.18/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32mok: [server2][0m
+ ________________________________________
+< TASK [Печать сообщения] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+[0;32mok: [server1] => {[0m
+[0;32m    "msg": "Привет, мир!"[0m
+[0;32m}[0m
+[0;32mok: [server2] => {[0m
+[0;32m    "msg": "Привет, мир!"[0m
+[0;32m}[0m
+ ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+[0;32mserver1[0m                    : [0;32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[0;32mserver2[0m                    : [0;32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

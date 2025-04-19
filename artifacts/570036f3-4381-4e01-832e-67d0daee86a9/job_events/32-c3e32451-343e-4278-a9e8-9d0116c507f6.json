@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "c3e32451-343e-4278-a9e8-9d0116c507f6", "counter": 32, "stdout": "\u001b[0;34m    raise AnsibleOptionsError(\"Invalid extra vars data supplied. '%s' could not be made into a dictionary\" % extra_vars_opt)\u001b[0m", "start_line": 31, "end_line": 32, "runner_ident": "570036f3-4381-4e01-832e-67d0daee86a9", "created": "2025-04-12T21:03:35.627664+00:00"}

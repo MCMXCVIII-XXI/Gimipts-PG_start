@@ -1,0 +1,26 @@
+[0;34mansible-playbook [core 2.18.4][0m
+[0;34m  config file = None[0m
+[0;34m  configured module search path = ['/home/mcmxcviii/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules'][0m
+[0;34m  ansible python module location = /home/mcmxcviii/Documents/gh1/pg_install/venv/lib/python3.13/site-packages/ansible[0m
+[0;34m  ansible collection location = /home/mcmxcviii/.ansible/collections:/usr/share/ansible/collections[0m
+[0;34m  executable location = /home/mcmxcviii/Documents/gh1/pg_install/venv/bin/ansible-playbook[0m
+[0;34m  python version = 3.13.2 (main, Feb  5 2025, 08:05:21) [GCC 14.2.1 20250128] (/home/mcmxcviii/Documents/gh1/pg_install/venv/bin/python)[0m
+[0;34m  jinja version = 3.1.6[0m
+[0;34m  libyaml = True[0m
+[0;34mNo config file found; using defaults[0m
+[0;34msetting up inventory plugins[0m
+[0;34mLoading collection ansible.builtin from [0m
+[0;34mhost_list declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mscript declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mauto declined parsing /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts as it did not pass its verify_file() method[0m
+[0;34mParsed /home/mcmxcviii/Documents/gh1/pg_install/inventory/hosts inventory source with ini plugin[0m
+[0;31mERROR! 'forks' is not a valid attribute for a Play[0m
+[0;31m[0m
+[0;31mThe error appears to be in '/home/mcmxcviii/Documents/gh1/pg_install/playbook.yml': line 111, column 3, but may[0m
+[0;31mbe elsewhere in the file depending on the exact syntax problem.[0m
+[0;31m[0m
+[0;31mThe offending line appears to be:[0m
+[0;31m[0m
+[0;31m[0m
+[0;31m- name: Tasks for Linux hosts[0m
+[0;31m  ^ here[0m
