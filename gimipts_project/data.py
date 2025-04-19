@@ -15,7 +15,8 @@ def parse_arguments() -> argparse.Namespace:
 def add_inventory(args: argparse.Namespace) -> None:
     try:
         current_path = os.path.dirname(os.path.abspath(__file__))
-        current_path = re.match(r'(.*?/pg_install)', current_path).group(1)
+        path_parts = current_path.split('/venv', 1)
+        result = path_parts[0] if len(path_parts) > 0 else current_path
         
         new_servers = args.hostname.split()
         if len(new_servers) < 2:
@@ -23,7 +24,7 @@ def add_inventory(args: argparse.Namespace) -> None:
 
         second_server = new_servers[1]
 
-        with open(f'{current_path}/ansible_run/inventory.ini', 'a') as f:
+        with open(f'{result}/ansible_run/inventory.ini', 'a') as f:
             f.write("[myhosts]\n")
             server_number = 0
             for new_server_ip in new_servers:

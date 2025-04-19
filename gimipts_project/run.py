@@ -9,7 +9,8 @@ import re
 def run_ansible() -> None:
     try:
         current_path = os.path.dirname(os.path.abspath(__file__))
-        current_path = re.match(r'(.*?/pg_install)', current_path).group(1)
+        path_parts = current_path.split('/venv', 1)
+        result = path_parts[0] if len(path_parts) > 0 else current_path
         
         data_organization()
 
@@ -23,13 +24,13 @@ def run_ansible() -> None:
         subprocess.run('ssh-add ~/.ssh/id_ed25519', shell=True, check=True)
 
         subprocess.run('ansible-playbook '
-                       f'{current_path}/ansible_run/playbook.yml '
-                       f'-i {current_path}/ansible_run/inventory.ini --ask-become-pass',
+                       f'{result}/ansible_run/playbook.yml '
+                       f'-i {result}/ansible_run/inventory.ini --ask-become-pass',
                        shell=True, check=True)
 
         subprocess.run('ssh-agent -k', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-        with open(f'{current_path}/ansible_run/inventory.ini', 'w') as f:
+        with open(f'{result}/ansible_run/inventory.ini', 'w') as f:
             f.truncate(0)
 
         print("The inventory file has been cleared.")
